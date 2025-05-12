@@ -3,34 +3,36 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - mod  # or your default branch
+      - mod
 
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout source code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Set up Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18  # or the version your project uses
+          node-version: 18  # or your required version
 
-      # Install dependencies and build
-      - name: Install and Build
-        run: |
-          npm ci
-          npm run build
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8  # or your pnpm version
 
-      # Deploy dist folder to publish branch
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
       - name: Deploy to publish branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: publish
           publish_dir: ./dist
-          force_orphan: true  # optional, but creates clean history
+          force_orphan: true
