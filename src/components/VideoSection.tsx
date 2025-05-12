@@ -11,7 +11,7 @@ const VideoSection = () => {
   const isVideoInView = useInView(videoRef, { once: true, amount: 0.2 });
   
   // For demo purposes - in a real application this would be a real video URL
-  const demoVideoUrl = "/progress-video.mp4";
+  const demoVideoUrl = "/SicolandGreen/progress-video.mp4";
   
   return (
     <section id="video" className="py-8 bg-gray-100 h-dvh">
