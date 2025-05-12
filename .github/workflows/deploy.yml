@@ -12,11 +12,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18  # or your required version
+
+      - name: Debug Show repo files
+        run: ls -la
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
