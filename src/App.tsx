@@ -9,7 +9,7 @@ import LandingPage from "@/pages/LandingPage";
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={LandingPage} />
+      <Route path="/SicolandGreen/" component={LandingPage} />
       <Route component={NotFound} />
     </Switch>
   );
