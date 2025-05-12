@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 const LandingPage = () => {
   // Set title once the component mounts
   useEffect(() => {
-    document.title = "Sicoland Green Andasari - Premium Housing";
+    document.title = "Sicoland Green Andansari - Premium Housing";
   }, []);
 
   return (

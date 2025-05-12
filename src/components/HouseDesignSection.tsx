@@ -22,16 +22,12 @@ const DesignCard = ({ image, title, description, index }: DesignCardProps) => {
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <div className="relative h-64">
+      <div className="relative">
         <img 
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
         />
-      </div>
-      <div className="p-6 bg-white">
-        <h3 className="text-xl font-heading font-semibold text-primary">{title}</h3>
-        <p className="mt-2 text-gray-600">{description}</p>
       </div>
     </motion.div>
   );
@@ -43,35 +39,10 @@ const HouseDesignSection = () => {
   
   const designCards = [
     {
-      image: images.modernExterior,
+      image: images.design,
       title: "Exterior Design",
       description: "Contemporary façade with premium materials and beautiful landscaping."
     },
-    {
-      image: images.livingRoom,
-      title: "Living Space",
-      description: "Open concept living area with large windows for abundant natural light."
-    },
-    {
-      image: images.kitchen,
-      title: "Kitchen Design",
-      description: "Premium kitchen with high-end appliances and elegant cabinetry."
-    },
-    {
-      image: images.bedroom,
-      title: "Master Bedroom",
-      description: "Spacious master suite with walk-in closet and luxury en-suite bathroom."
-    },
-    {
-      image: images.aerialView,
-      title: "Development Overview",
-      description: "Beautifully planned community with green spaces and amenities."
-    },
-    {
-      image: images.backyard,
-      title: "Outdoor Living",
-      description: "Private backyard with patio space perfect for entertaining and relaxation."
-    }
   ];
   
   return (
@@ -84,9 +55,9 @@ const HouseDesignSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <span className="text-accent font-semibold">Our Exclusive Design</span>
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mt-2 text-primary">
-            Modern Elegance House Type
+          <span className="text-accent font-semibold">Tipe Rumah</span>
+          <h2 className="font-heading text-2xl md:text-4xl font-bold mt-2 text-primary">
+            Rumah Nyaman dan Elegan
           </h2>
           <p className="mt-4 text-gray-600">
             Discover the perfect blend of contemporary design and functional living space.
@@ -105,21 +76,6 @@ const HouseDesignSection = () => {
             />
           ))}
         </div>
-        
-        <motion.div 
-          className="mt-16 text-center"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
-          <a 
-            href="#" 
-            className="inline-flex items-center text-accent font-semibold hover:text-secondary"
-          >
-            View Full Specifications
-            <ArrowRight className="ml-2 h-4 w-4" />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

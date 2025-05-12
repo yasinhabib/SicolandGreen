@@ -37,37 +37,15 @@ const Navbar = () => {
   return (
     <nav className={cn(
       "fixed w-full z-50 transition-all duration-300",
-      scrolled ? "bg-white/90 backdrop-blur-sm shadow-md" : "bg-transparent"
+      scrolled ? "bg-[#262E4C] backdrop-blur-sm shadow-md" : "bg-transparent hidden"
     )}>
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <Link href="/" className="text-primary font-heading font-bold text-2xl">
-          Sicoland Green
+        <Link href="/" className="text-white font-heading font-bold text-2xl flex">
+          {/* <div className="bg-[#262E4C] rounded-full">
+            <img src="/favicon.png" className="size-8" /> 
+          </div> */}
+          Sicoland Green Andansari
         </Link>
-        
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <a 
-              key={link.name}
-              href={link.href}
-              className="text-primary hover:text-accent transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-          <Button className="bg-primary hover:bg-secondary text-white">
-            Inquire Now
-          </Button>
-        </div>
-        
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="md:hidden text-primary"
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
       
       {/* Mobile Menu */}
