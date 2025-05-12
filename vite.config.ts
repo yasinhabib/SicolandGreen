@@ -8,6 +8,9 @@ export default defineConfig({
     tsconfigPaths(),
     react()
   ],
+  build: {
+    outDir: 'dist',
+  },
   resolve: {
      alias: [{ find: '@', replacement: '/src' }],
   },
