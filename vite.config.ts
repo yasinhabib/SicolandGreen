@@ -1,9 +1,9 @@
 import { defineConfig } from "vite";
 import tsconfigPaths from 'vite-tsconfig-paths'
 import react from "@vitejs/plugin-react";
-import path from "path";
 
 export default defineConfig({
+  base: '/SicolandGreen/', // 👈 use your repo name here
   plugins: [
     tsconfigPaths(),
     react()
